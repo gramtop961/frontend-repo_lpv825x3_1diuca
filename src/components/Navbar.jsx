@@ -1,39 +1,20 @@
-import { Rocket, MessageSquare, Github } from 'lucide-react'
+import React from 'react';
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-black/5">
-      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <header className="sticky top-0 z-40 w-full backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white grid place-items-center shadow-sm">
-            <Rocket className="h-5 w-5" />
-          </div>
-          <span className="text-xl font-semibold tracking-tight">Chatbot AI SaaS</span>
+          <span className="inline-block w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 via-violet-500 to-fuchsia-500" />
+          <span className="font-semibold text-lg tracking-tight">AstraChat</span>
         </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-          <a href="#features" className="hover:text-gray-900 transition">Fitur</a>
-          <a href="#how" className="hover:text-gray-900 transition">Cara Kerja</a>
-          <a href="#faq" className="hover:text-gray-900 transition">FAQ</a>
+        <nav className="flex items-center gap-6">
+          <a href="#features" className="text-sm text-gray-600 hover:text-gray-900">Features</a>
+          <a href="#waitlist" className="inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Join waitlist
+          </a>
         </nav>
-        <div className="flex items-center gap-3">
-          <a
-            href="#waitlist"
-            className="inline-flex items-center gap-2 rounded-lg bg-gray-900 text-white px-4 py-2 text-sm font-medium shadow hover:bg-black"
-          >
-            <MessageSquare className="h-4 w-4" />
-            Join Waitlist
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden md:inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
-          >
-            <Github className="h-4 w-4" />
-            GitHub
-          </a>
-        </div>
       </div>
     </header>
-  )
+  );
 }

@@ -1,48 +1,49 @@
-import { Brain, Wand2, Headphones, ChartLine } from 'lucide-react'
+import React from 'react';
+import { Rocket, Bot, MessageSquare, Shield } from 'lucide-react';
 
-const items = [
+const features = [
   {
-    icon: Brain,
-    title: 'Pelatihan dari data Anda',
-    desc: 'Impor FAQ, artikel help center, atau dokumen untuk melatih chatbot secara aman.'
+    icon: Rocket,
+    title: 'Launch faster',
+    desc: 'Plug-and-play widgets, prebuilt flows, and zero-code onboarding so you go live in days, not months.'
   },
   {
-    icon: Wand2,
-    title: 'Tanpa koding rumit',
-    desc: 'Widget siap pakai untuk dipasang di website dalam hitungan menit.'
+    icon: Bot,
+    title: 'Smarter replies',
+    desc: 'Retrieval-augmented generation grounded in your docs to keep answers accurate and on-brand.'
   },
   {
-    icon: Headphones,
-    title: 'Support 24/7',
-    desc: 'Layanan pelanggan otomatis yang selalu siap menjawab pertanyaan.'
+    icon: MessageSquare,
+    title: 'Omnichannel',
+    desc: 'Web, in-app, email, and chat platforms. Meet customers where they already are.'
   },
   {
-    icon: ChartLine,
-    title: 'Insight & analytics',
-    desc: 'Lihat topik populer, celah konten, dan performa jawaban AI.'
-  },
-]
+    icon: Shield,
+    title: 'Enterprise-grade',
+    desc: 'Role-based controls, audit logs, and SOC2-ready practices keep your data safe.'
+  }
+];
 
 export default function Features() {
   return (
-    <section id="features" className="py-16 border-t bg-gradient-to-b from-white to-gray-50">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight">Fitur utama</h2>
-          <p className="mt-3 text-gray-600">Semua yang Anda butuhkan untuk meluncurkan chatbot AI yang bernilai bisnis.</p>
+    <section id="features" className="py-16 sm:py-20 bg-gray-50 border-t">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">Everything you need to ship an AI assistant</h2>
+          <p className="mt-3 text-gray-600">Powerful building blocks that scale from startup to enterprise.</p>
         </div>
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {items.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="rounded-xl border bg-white p-6 shadow-sm hover:shadow transition">
-              <div className="h-10 w-10 rounded-lg bg-blue-600/10 text-blue-600 grid place-items-center">
-                <Icon className="h-5 w-5" />
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="group rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                <Icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-4 font-semibold">{title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{desc}</p>
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-gray-600">{desc}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

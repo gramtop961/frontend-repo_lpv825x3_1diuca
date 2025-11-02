@@ -1,14 +1,17 @@
+import React from 'react';
+
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="mt-20 border-t">
-      <div className="mx-auto max-w-6xl px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
-        <p>© {new Date().getFullYear()} Chatbot AI SaaS. All rights reserved.</p>
-        <div className="flex items-center gap-4">
-          <a href="#features" className="hover:text-gray-900">Fitur</a>
-          <a href="#waitlist" className="hover:text-gray-900">Waitlist</a>
-          <a href="#" className="hover:text-gray-900">Kebijakan Privasi</a>
+    <footer className="border-t bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-gray-600">© {year} AstraChat, Inc. All rights reserved.</p>
+        <div className="flex items-center gap-5 text-sm">
+          <a className="text-gray-600 hover:text-gray-900" href="#features">Features</a>
+          <a className="text-gray-600 hover:text-gray-900" href="#waitlist">Join waitlist</a>
+          <a className="text-gray-600 hover:text-gray-900" href="#">Privacy</a>
         </div>
       </div>
     </footer>
-  )
+  );
 }
